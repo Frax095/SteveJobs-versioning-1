@@ -1,0 +1,23 @@
+{
+  "name": "stevejobs-versioning-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "Mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frax095/SteveJobs-versioning-1.git"
+  },
+  "author": "Frax095@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Frax095/SteveJobs-versioning-1/issues"
+  },
+  "homepage": "https://github.com/Frax095/SteveJobs-versioning-1#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.5.1"
+  }
+}
