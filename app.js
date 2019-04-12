@@ -4,6 +4,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// collegamento al database
 const host = 'localhost';
 const dbName = 'user';
 const mongoose = require('mongoose');
@@ -17,6 +18,7 @@ db.once('open', function() {
     console.log('DB connection Ready');
 });
 
+//uso dello schema
 var User = require('./models/user');
 
 
