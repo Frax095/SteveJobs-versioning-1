@@ -4,6 +4,21 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+const host = 'localhost';
+const dbName = 'user';
+const mongoose = require('mongoose');
+mongoose.connect(`mongodb://${host}/${dbName}`);
+
+var db = mongoose.connection;
+db.on('error', function() {
+    console.error('Connection error!')
+});
+db.once('open', function() {
+    console.log('DB connection Ready');
+});
+
+var User = require('./models/user');
+
 
 
 app.listen(3000);
