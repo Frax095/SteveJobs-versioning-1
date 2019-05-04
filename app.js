@@ -4,11 +4,11 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-var users = require('./routes/users');
+var users = require('./routes/userApi');
 app.use('/users', users);
 // collegamento al database
 const host = 'localhost';
-const dbName = 'user';
+const dbName = 'stevejobs-versioning-1';
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb://${host}/${dbName}`);
 
@@ -21,7 +21,7 @@ db.once('open', function() {
 });
 
 //uso dello schema
-var User = require('./models/user');
+var User = require('./models/userSchema');
 
 
 
