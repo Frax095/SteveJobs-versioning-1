@@ -8,6 +8,14 @@ router.get('/', function(req, res) {
         res.json(users);
     });
 });
+router.get('/:name', function(req, res) {
+    User.findById({_name: req.query.name})
+        .exec(function(err, user) {
+            if (err) return res.status(500).json({error: err});
+            if (!user) return res.status(404).json({message: 'Utente non trovato'});
+            es.json({message: 'Utente trovato'});
+        });
+});
 
 router.post('/', function(req, res) {
     const newUser = new User(req.body);
